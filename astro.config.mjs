@@ -7,6 +7,6 @@ import icon from "astro-icon";
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://CAIR-Collective.github.io/website',
+	site: 'https://CAIR-Collective.github.io',
 	integrations: [mdx(), sitemap(), icon()],
 });
