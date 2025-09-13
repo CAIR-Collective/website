@@ -5,8 +5,11 @@ import sitemap from '@astrojs/sitemap';
 import { defineConfig } from 'astro/config';
 import icon from "astro-icon";
 
-// https://astro.build/config
+// Determine base & site for dev vs production (GH Pages at /website/)
+const isProd = process.env.NODE_ENV === 'production';
+
 export default defineConfig({
-	site: 'https://CAIR-Collective.github.io',
-	integrations: [mdx(), sitemap(), icon()],
+    site: isProd ? 'https://CAIR-Collective.github.io' : 'http://localhost:4321',
+    base: isProd ? '/website/' : '/',
+    integrations: [mdx(), sitemap(), icon()],
 });
